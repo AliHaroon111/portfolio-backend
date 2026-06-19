@@ -1,5 +1,7 @@
 import express from 'express';
 import cors from 'cors';
+import { ContactValidationRules, validateContact } from './middlewares/validateContact';
+import { handleContactFrom } from './controllers/contactController';
 
 const app = express();
 
@@ -15,5 +17,8 @@ app.get('/api/v1/health', (req, res) => {
         timestamp: new Date().toISOString()
     });
 });
+
+// middleware execution
+app.post('/api/v1/contact', ContactValidationRules, validateContact, handleContactFrom);
 
 export default app;
