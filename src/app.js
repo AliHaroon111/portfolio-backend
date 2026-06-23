@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
-import { ContactValidationRules, validateContact } from './middlewares/validateContact';
-import { handleContactFrom } from './controllers/contactController';
+import { ContactValidationRules, validateContact } from './middlewares/validateContact.js';
+import { handleContactFrom } from './controllers/contactController.js';
 
 const app = express();
 
