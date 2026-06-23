@@ -1,4 +1,4 @@
-import {validationResult} from 'express-validator';
+import {body, validationResult} from 'express-validator';
 
 export const ContactValidationRules = [
     body('name')
@@ -23,7 +23,7 @@ export const validateContact = (req, res, next) => {
     if(!errors.isEmpty()){
         res.status(400).json({
             status: 'fail',
-            message: errors.array[0].msg  // Grabs the first error message cleanly
+            message: errors.array()[0].msg  // Grabs the first error message cleanly
         })
     }
     next(); // Move to the controller if everything is clean!
