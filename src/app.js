@@ -9,6 +9,13 @@ const app = express();
 app.use(cors()); 
 app.use(express.json()); 
 
+// 2. Allow your live frontend origin to communicate with this API
+app.use(cors({
+    origin: 'https://aliharoon111.github.io', 
+    methods: ['POST', 'GET'],
+    credentials: true
+}));
+
 // Base Health-Check Route
 app.get('/api/v1/health', (req, res) => {
     res.status(200).json({
