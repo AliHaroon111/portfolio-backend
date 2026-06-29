@@ -26,5 +26,5 @@ export const validateContact = (req, res, next) => {
             message: errors.array()[0].msg  // Grabs the first error message cleanly
         })
     }
-}
     next(); // Move to the controller if everything is clean!
+}
