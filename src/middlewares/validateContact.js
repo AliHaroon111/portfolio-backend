@@ -21,10 +21,10 @@ export const ContactValidationRules = [
 export const validateContact = (req, res, next) => {
     const errors = validationResult(req);
     if(!errors.isEmpty()){
-        res.status(400).json({
+        return res.status(400).json({
             status: 'fail',
             message: errors.array()[0].msg  // Grabs the first error message cleanly
         })
     }
-    next(); // Move to the controller if everything is clean!
 }
+    next(); // Move to the controller if everything is clean!

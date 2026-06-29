@@ -17,7 +17,7 @@ export const handleContactFrom = async(req, res) =>{
             from: process.env.EMAIL_USER,
             to: process.env.EMAIL_USER,
             replyTo: email,
-            subject: `💼Portfolio messafe from ${name}`,
+            subject: `💼Portfolio message from ${name}`,
             text:  `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
         };
 

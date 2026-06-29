@@ -5,16 +5,13 @@ import { handleContactFrom } from './controllers/contactController.js';
 
 const app = express();
 
-// Global Middlewares
-app.use(cors()); 
-app.use(express.json()); 
-
 // 2. Allow your live frontend origin to communicate with this API
 app.use(cors({
-    origin: 'https://aliharoon111.github.io', 
+    origin: 'https://aliharoon111.github.io',
     methods: ['POST', 'GET'],
     credentials: true
 }));
+app.use(express.json());
 
 // Base Health-Check Route
 app.get('/api/v1/health', (req, res) => {
